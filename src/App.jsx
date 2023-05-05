@@ -49,6 +49,12 @@ const App = () => {
 
   };
 
+  const [checked, setChecked] = React.useState(false);
+
+  const handleChange = () => {
+    setChecked(!checked);
+  };
+
   // display form
   const DisplayForm = () => (
     <div>
@@ -56,6 +62,11 @@ const App = () => {
       <button type="submit" onClick={onFileUpload}>
         Upload!
           </button>
+
+      <label>
+        <input type="checkbox" onChange={handleChange} checked={checked}/>          
+          Opt-Out of Hash submission
+      </label>
     </div>
   )
 
